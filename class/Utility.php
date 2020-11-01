@@ -1,6 +1,6 @@
 <?php
 
-namespace XoopsModules\Wgsimpleacc;
+namespace XoopsModules\Wgphpoffice;
 
 /*
  Utility Class Definition
@@ -18,7 +18,7 @@ namespace XoopsModules\Wgsimpleacc;
 /**
  * Module:  wgsimpleacc
  *
- * @package      \module\wgsimpleacc\class
+ * @package      \module\wgphpoffice\class
  * @license      http://www.fsf.org/copyleft/gpl.html GNU public license
  * @copyright    https://xoops.org 2001-2017 &copy; XOOPS Project
  * @author       ZySpec <owners@zyspec.com>
@@ -27,8 +27,8 @@ namespace XoopsModules\Wgsimpleacc;
  */
 
 use Xmf\Request;
-use XoopsModules\Wgsimpleacc;
-use XoopsModules\Wgsimpleacc\{Helper, Constants, FormInline};
+use XoopsModules\Wgphpoffice;
+use XoopsModules\Wgphpoffice\{Helper, Constants};
 
 /**
  * Class Utility
