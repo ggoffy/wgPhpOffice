@@ -23,7 +23,6 @@
 
 use XoopsModules\Wgphpoffice\Common;
 
-include_once \dirname(__DIR__) . '/preloads/autoloader.php';
 require __DIR__ . '/header.php';
 
 // Template Index

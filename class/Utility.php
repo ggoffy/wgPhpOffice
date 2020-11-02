@@ -27,8 +27,10 @@ namespace XoopsModules\Wgphpoffice;
  */
 
 use Xmf\Request;
-use XoopsModules\Wgphpoffice;
-use XoopsModules\Wgphpoffice\{Helper, Constants};
+use XoopsModules\Wgphpoffice\{
+    Common,
+    Helper
+};
 
 /**
  * Class Utility

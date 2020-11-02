@@ -47,7 +47,15 @@ switch ($op) {
             case 'none';
             default:
                 break;
-            case 'xlsx';
+            case 'rtf';
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/sample_rtf.php';
+                break;
+            case 'html':
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/sample_html.php';
+                break;
+            case 'pdf':
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/sample_pdf.php';
+                break;
         }
         break;
 }

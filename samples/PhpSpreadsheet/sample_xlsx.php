@@ -21,8 +21,8 @@
  */
 
 use XoopsModules\Wgphpoffice;
-use XoopsModules\Wgphpoffice\PhpSpreadsheet\IOFactory;
-use XoopsModules\Wgphpoffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet as Spreadsheet;
 
 // deactivate xoops logger while running through this code
 $xoopsLogger->activated = false;
