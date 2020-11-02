@@ -23,6 +23,9 @@
 use XoopsModules\Wgphpoffice\PhpSpreadsheet\IOFactory;
 use XoopsModules\Wgphpoffice\PhpSpreadsheet\Spreadsheet;
 
+// deactivate xoops logger while running through this code
+$xoopsLogger->activated = false;
+
 // Create new Spreadsheet object
 $spreadsheet = new Spreadsheet();
 

@@ -1,4 +1,6 @@
 ==============================================================
 1.0 [2020/10/27 21:47:06]
 ==============================================================
- - Original release wgphpoffice (XOOPS Development Team)
+ - Original release wgphpoffice (Goffy / wedega.com)
+ - added deactivation of xoops logger (Mamba/Goffy)
+ 
