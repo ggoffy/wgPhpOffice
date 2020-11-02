@@ -29,5 +29,6 @@ class WgphpofficeCorePreload extends \XoopsPreloadItem
     public static function eventCoreIncludeCommonEnd($args)
     {
         include __DIR__ . '/autoloader.php';
+        include __DIR__ . '/autoloader2.php';
     }
 }

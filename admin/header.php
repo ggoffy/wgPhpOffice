@@ -19,7 +19,12 @@
  * @min_xoops      2.5.11
  * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
+
 include \dirname(\dirname(\dirname(__DIR__))) . '/include/cp_header.php';
+
+include_once \dirname(__DIR__) . '/preloads/autoloader.php';
+include_once \dirname(__DIR__) . '/preloads/autoloader2.php';
+
 include_once \dirname(__DIR__) . '/include/common.php';
 
 $sysPathIcon16   = '../' . $GLOBALS['xoopsModule']->getInfo('sysicons16');

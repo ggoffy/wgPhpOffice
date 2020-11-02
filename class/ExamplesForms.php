@@ -24,6 +24,7 @@ namespace XoopsModules\Wgphpoffice;
  */
 
 use XoopsModules\Wgphpoffice;
+use PhpOffice;
 
 \defined('XOOPS_ROOT_PATH') || die('Restricted access');
 
@@ -82,11 +83,15 @@ class ExamplesForms
                 $img ="<img src='" . WGPHPOFFICE_IMAGE_URL . "/phpspreadsheet.png'>";
                 break;
             case 'word':
+                $typeSelect->addOption('rtf', 'rtf');
+                $typeSelect->addOption('html', 'html');
+                $typeSelect->addOption('pdf', 'pdf');
                 $github = "<a href='https://github.com/PHPOffice/PhpWord'>https://github.com/PHPOffice/PhpWord</a>";
                 $docu = "<a href='https://phpword.readthedocs.io/en/latest/'>https://phpword.readthedocs.io/en/latest/</a>";
                 $img ="<img src='" . WGPHPOFFICE_IMAGE_URL . "/phpword.png'>";
                 break;
             case 'presentation':
+                $typeSelect->addOption('ppt', 'ppt');
                 $github = "<a href='https://github.com/PHPOffice/PhpPresentation'>https://github.com/PHPOffice/PhpPresentation</a>";
                 $docu = "<a href='https://phppresentation.readthedocs.io/en/latest/'>https://phppresentation.readthedocs.io/en/latest/</a>";
                 $img ="<img src='" . WGPHPOFFICE_IMAGE_URL . "/phppowerpoint.png'>";

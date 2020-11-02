@@ -23,6 +23,9 @@
 use Xmf\Request;
 use XoopsModules\Wgphpoffice;
 use XoopsModules\Wgphpoffice\ExamplesForms;
+//use PhpOffice;
+use PhpOffice\PhpSpreadsheet;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 require __DIR__ . '/header.php';
 

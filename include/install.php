@@ -20,8 +20,15 @@
  * @author         Wedega - Email:<webmaster@wedega.com> - Website:<https://wedega.com> XOOPS Project (www.xoops.org) $
  */
 
-use XoopsModules\Wgphpoffice;
-use XoopsModules\Wgphpoffice\Common;
+use XoopsModules\Wgphpoffice\{
+    Common\Configurator,
+    Helper,
+    Utility
+};
+
+/** @var Helper $helper */
+/** @var Utility $utility */
+/** @var Configurator $configurator */
 
 /**
  * @param \XoopsModule $module
@@ -30,8 +37,10 @@ use XoopsModules\Wgphpoffice\Common;
 function xoops_module_pre_install_wgphpoffice(\XoopsModule $module)
 {
     require \dirname(__DIR__) . '/preloads/autoloader.php';
-    /** @var Wgphpoffice\Utility $utility */
-    $utility = new Wgphpoffice\Utility();
+    require \dirname(__DIR__) . '/preloads/autoloader2.php';
+    include __DIR__ . '/common.php';
+
+    $utility = new Utility();
 
     //check for minimum XOOPS version
     $xoopsSuccess = $utility::checkVerXoops($module);
@@ -56,13 +65,11 @@ function xoops_module_pre_install_wgphpoffice(\XoopsModule $module)
 function xoops_module_install_wgphpoffice(\XoopsModule $module)
 {
     require \dirname(__DIR__) . '/preloads/autoloader.php';
+    require \dirname(__DIR__) . '/preloads/autoloader2.php';
 
-    /** @var Wgphpoffice\Helper $helper */ 
-    /** @var Wgphpoffice\Utility $utility */
-    /** @var Common\Configurator $configurator */
-    $helper       = Wgphpoffice\Helper::getInstance();
-    $utility      = new Wgphpoffice\Utility();
-    $configurator = new Common\Configurator();
+    $helper       = Helper::getInstance();
+    $utility      = new Utility();
+    $configurator = new Configurator();
 
     // Load language files
     $helper->loadLanguage('admin');
