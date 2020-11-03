@@ -17,7 +17,7 @@
  * @package        wgphpoffice
  * @since          1.0
  * @min_xoops      2.5.11
- * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
+ * @author         Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 require __DIR__ . '/header.php';
 $templateMain = 'wgphpoffice_admin_about.tpl';

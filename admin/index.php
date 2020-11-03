@@ -17,7 +17,7 @@
  * @package        wgphpoffice
  * @since          1.0
  * @min_xoops      2.5.11
- * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
+ * @author         Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 
 
@@ -34,19 +34,6 @@ $adminObject->addInfoBox(_AM_WGPHPOFFICE_STATISTICS);
 $adminObject->addInfoBoxLine('<label>' . _AM_WGPHPOFFICE_SPREADSHEET . '</label>');
 $adminObject->addInfoBoxLine('<label>' . _AM_WGPHPOFFICE_WORD . '</label>');
 $adminObject->addInfoBoxLine('<label>' . _AM_WGPHPOFFICE_PRESENTATION . '</label>');
-
-// Upload Folders
-$configurator = new Common\Configurator();
-if ($configurator->uploadFolders && \is_array($configurator->uploadFolders)) {
-	foreach (\array_keys($configurator->uploadFolders) as $i) {
-		$folder[] = $configurator->uploadFolders[$i];
-	}
-}
-// Uploads Folders Created
-foreach (\array_keys($folder) as $i) {
-	$adminObject->addConfigBoxLine($folder[$i], 'folder');
-	$adminObject->addConfigBoxLine(array($folder[$i], '777'), 'chmod');
-}
 
 // Render Index
 $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('index.php'));

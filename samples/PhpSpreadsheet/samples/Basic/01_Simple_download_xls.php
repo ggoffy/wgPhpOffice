@@ -17,9 +17,11 @@
  * @package        wgphpoffice
  * @since          1.0
  * @min_xoops      2.5.11
- * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
+ * @author         Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 
+use XoopsModules\Wgphpoffice;
+use PhpOffice;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
@@ -56,9 +58,9 @@ $spreadsheet->getActiveSheet()->setTitle('Simple');
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
 $spreadsheet->setActiveSheetIndex(0);
 
-// Redirect output to a client’s web browser (Ods)
-header('Content-Type: application/vnd.oasis.opendocument.spreadsheet');
-header('Content-Disposition: attachment;filename="01simple.ods"');
+// Redirect output to a client’s web browser (Xls)
+header('Content-Type: application/vnd.ms-excel');
+header('Content-Disposition: attachment;filename="01simple.xls"');
 header('Cache-Control: max-age=0');
 // If you're serving to IE 9, then the following may be needed
 header('Cache-Control: max-age=1');
@@ -69,7 +71,6 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT'); // always modifie
 header('Cache-Control: cache, must-revalidate'); // HTTP/1.1
 header('Pragma: public'); // HTTP/1.0
 
-$writer = IOFactory::createWriter($spreadsheet, 'Ods');
+$writer = IOFactory::createWriter($spreadsheet, 'Xls');
 $writer->save('php://output');
-
 exit;

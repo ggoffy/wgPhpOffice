@@ -17,16 +17,15 @@
  * @package        wgphpoffice
  * @since          1.0
  * @min_xoops      2.5.11
- * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
+ * @author         Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 
 use XoopsModules\Wgphpoffice;
-use PhpOffice;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 // deactivate xoops logger while running through this code
-$xoopsLogger->activated = false;
+//$xoopsLogger->activated = false;
 
 // Create new Spreadsheet object
 $spreadsheet = new Spreadsheet();
@@ -34,10 +33,10 @@ $spreadsheet = new Spreadsheet();
 // Set document properties
 $spreadsheet->getProperties()->setCreator('Maarten Balliauw')
     ->setLastModifiedBy('Maarten Balliauw')
-    ->setTitle('Office 2007 XLSX Test Document')
-    ->setSubject('Office 2007 XLSX Test Document')
-    ->setDescription('Test document for Office 2007 XLSX, generated using PHP classes.')
-    ->setKeywords('office 2007 openxml php')
+    ->setTitle('PDF Test Document')
+    ->setSubject('PDF Test Document')
+    ->setDescription('Test document for PDF, generated using PHP classes.')
+    ->setKeywords('pdf php')
     ->setCategory('Test result file');
 
 // Add some data
@@ -54,23 +53,18 @@ $spreadsheet->setActiveSheetIndex(0)
 
 // Rename worksheet
 $spreadsheet->getActiveSheet()->setTitle('Simple');
+$spreadsheet->getActiveSheet()->setShowGridLines(false);
 
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
 $spreadsheet->setActiveSheetIndex(0);
 
-// Redirect output to a client’s web browser (Xls)
-header('Content-Type: application/vnd.ms-excel');
-header('Content-Disposition: attachment;filename="01simple.xls"');
+IOFactory::registerWriter('Pdf', \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf::class);
+
+// Redirect output to a client’s web browser (PDF)
+header('Content-Type: application/pdf');
+header('Content-Disposition: attachment;filename="01simple.pdf"');
 header('Cache-Control: max-age=0');
-// If you're serving to IE 9, then the following may be needed
-header('Cache-Control: max-age=1');
 
-// If you're serving to IE over SSL, then the following may be needed
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
-header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT'); // always modified
-header('Cache-Control: cache, must-revalidate'); // HTTP/1.1
-header('Pragma: public'); // HTTP/1.0
-
-$writer = IOFactory::createWriter($spreadsheet, 'Xls');
+$writer = IOFactory::createWriter($spreadsheet, 'Pdf');
 $writer->save('php://output');
 exit;

@@ -3,4 +3,5 @@
 ==============================================================
  - Original release wgphpoffice (Goffy / wedega.com)
  - added deactivation of xoops logger (Mamba/Goffy)
+ - implemented changes of Mamba
  

@@ -17,7 +17,7 @@
  * @package        wgphpoffice
  * @since          1.0
  * @min_xoops      2.5.11
- * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
+ * @author         Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 
 use Xmf\Request;
@@ -51,13 +51,17 @@ switch ($op) {
             default:
                 break;
             case 'xlsx';
-                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/sample_xlsx.php';
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/samples/Basic/01_Simple_download_xlsx.php';
                 break;
             case 'xls':
-                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/sample_xls.php';
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/samples/Basic/01_Simple_download_xls.php';
                 break;
             case 'ods':
-                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/sample_ods.php';
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/samples/Basic/01_Simple_download_ods.php';
+                break;
+            case 'pdf':
+                //require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/samples/Basic/01_Simple_download_pdf.php';
+                require_once WGPHPOFFICE_PATH . '/samples/PhpSpreadsheet/samples/Pdf/21b_Pdf.php';
                 break;
         }
 		break;

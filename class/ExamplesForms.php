@@ -20,7 +20,7 @@ namespace XoopsModules\Wgphpoffice;
  * @package        wgphpoffice
  * @since          1.0
  * @min_xoops      2.5.11
- * @author         XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
+ * @author         Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 
 use XoopsModules\Wgphpoffice;
@@ -78,6 +78,7 @@ class ExamplesForms
                 $typeSelect->addOption('xls', 'xls');
                 $typeSelect->addOption('xlsx', 'xlsx');
                 $typeSelect->addOption('ods', 'ods');
+                $typeSelect->addOption('pdf', 'pdf');
                 $github = "<a href='https://github.com/PHPOffice/PhpSpreadsheet'>https://github.com/PHPOffice/PhpSpreadsheet</a>";
                 $docu = "<a href='https://phpspreadsheet.readthedocs.io/en/latest/'>https://phpspreadsheet.readthedocs.io/en/latest/</a>";
                 $img ="<img src='" . WGPHPOFFICE_IMAGE_URL . "/phpspreadsheet.png'>";
